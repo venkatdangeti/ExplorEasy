@@ -55,37 +55,45 @@ const apiKey = "pk.eyJ1IjoibWFmZXI3NCIsImEiOiJjbHMyODV2M3YwZ3NoMmxwaTZyZWJza3Q2I
 mapboxgl.accessToken = apiKey;
 const map = new mapboxgl.Map({
         container: 'map', // container ID
-        center: [-1.347907,53.390149], // starting position [lng, lat]
+        center: [-5.347907,53.390149], // starting position [lng, lat]
         zoom: 9 // starting zoom
         
     });
 
     new mapboxgl.Marker()
-        .setLngLat([-1.347907,53.390149])
+        .setLngLat([-5.347907,53.390149])
         .addTo(map);
 
         map.on('load', () => {
-            map.setFog({});
+            map.addSource
         });
         
-        daySearch.addEventListener("submit", async event => {
-            event.preventDefault();
-            const city = daySearch.value;
-            if(city){
-                
-                    const location = getLocation(city)
-                    document.location.href = 'index.html';
+        // daySearch.addEventListener("submit", async event => {
+        //     event.preventDefault();
+        //     const city = daySearch.value;
+        //     if(city){
+        //         try {
+        //             const location = getLocation(city)
+        //             //document.location.href = 'index.html';
                     
-                
-                
-            }
+        //         }
+                                 
+        //     }
             
-        })    
+        // })    
+        const city = "Sheffield"
     const queryUrl = `https://api.mapbox.com/geocoding/v5/mapbox.places/${city}.json?proximity=ip&access_token=${apiKey}`
         
     function getLocation(city) {
-        fetch(queryUrl)
+        fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${city}.json?proximity=ip&access_token=${apiKey}`)
         .then(response => response.json())
-        .then(console.log(data))
+        .then(data => {
+            console.log(data);
+        });
+        // .then(data => {
+            // const {lat, lng} = 
+        // })
     }
+
+    getLocation(city);
     
