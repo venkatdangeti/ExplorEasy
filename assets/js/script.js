@@ -55,13 +55,13 @@ const apiKey = "pk.eyJ1IjoibWFmZXI3NCIsImEiOiJjbHMyODV2M3YwZ3NoMmxwaTZyZWJza3Q2I
 mapboxgl.accessToken = apiKey;
 const map = new mapboxgl.Map({
         container: 'map', // container ID
-        center: [-5.347907,53.390149], // starting position [lng, lat]
+        center: [-1.470228,53.380663], // starting position [lng, lat]
         zoom: 9 // starting zoom
         
     });
 
     new mapboxgl.Marker()
-        .setLngLat([-5.347907,53.390149])
+        .setLngLat([-1.470228,53.380663])
         .addTo(map);
 
         map.on('load', () => {
@@ -77,13 +77,13 @@ const map = new mapboxgl.Map({
         //             //document.location.href = 'index.html';
                     
         //         }
-                                 
         //     }
-            
         // })    
-        const city = "Sheffield"
-    const queryUrl = `https://api.mapbox.com/geocoding/v5/mapbox.places/${city}.json?proximity=ip&access_token=${apiKey}`
         
+        // sults_LngLconst reat = data.features[0].geometry.coordinates;
+    const city = "Sheffield"
+    const queryUrl = `https://api.mapbox.com/geocoding/v5/mapbox.places/${city}.json?proximity=ip&access_token=${apiKey}`
+    
     function getLocation(city) {
         fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${city}.json?proximity=ip&access_token=${apiKey}`)
         .then(response => response.json())
@@ -92,8 +92,7 @@ const map = new mapboxgl.Map({
         });
         // .then(data => {
             // const {lat, lng} = 
-        // })
-    }
-
-    getLocation(city);
-    
+            // })
+        }
+        getLocation(city);
+        
