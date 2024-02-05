@@ -3,9 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./assets/style/style.css">  
+    <!-- Bootstrap -->
+    <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" 
+    crossorigin="anonymous"
+    />
+    <!-- dayjs -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- MapBox API -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js"></script>
+  
+    
+    <title>ExplorEasy Map</title>
 </head>
 <body>
+    <h1>My map</h1>
+    <div id="map"></div>
+
+
     
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmDudwunOmVymVH8dlayR-vtBWWOlp8sQ&loading=async&callback=initMap">
+</script>
+
+<script type="text/javascript" src="./assets/js/script.js"></script>
 </body>
 </html>
