@@ -69,3 +69,7 @@ main {
 .hide {
     display: none;
   }
+
+  .modal-backdrop {
+    --bs-backdrop-bg: transparent; 
+}
