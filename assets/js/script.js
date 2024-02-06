@@ -1,3 +1,10 @@
+const mapContainer = document.getElementById("map-container");
+const homepageContainer = document.getElementById("homepage");
+// const foodSearch = document.getElementById("btnFoodSearch");
+mapContainer.style.display = "none"
+
+
+
 // --------------------GoogleMaps--------------------
 
 /*
@@ -52,47 +59,84 @@ const apiKey = "pk.eyJ1IjoibWFmZXI3NCIsImEiOiJjbHMyODV2M3YwZ3NoMmxwaTZyZWJza3Q2I
 // const queryUrl = `https://api.mapbox.com/search/searchbox/v1/?access_token=${apiKey}`;
 
 
-mapboxgl.accessToken = apiKey;
-const map = new mapboxgl.Map({
+function displayMap( long,lat) {
+    mapboxgl.accessToken = apiKey;
+    const map = new mapboxgl.Map({
         container: 'map', // container ID
-        center: [-1.470228,53.380663], // starting position [lng, lat]
+        center: [ long, lat], // starting position [lng, lat]
         zoom: 9 // starting zoom
-        
+
     });
 
     new mapboxgl.Marker()
-        .setLngLat([-1.470228,53.380663])
+        .setLngLat([long, lat])
         .addTo(map);
 
-        map.on('load', () => {
-            map.addSource
+    map.on('load', () => {
+        map.addSource
+    });
+}
+// daySearch.addEventListener("submit", async event => {
+//     event.preventDefault();
+//     const city = daySearch.value;
+//     if(city){
+//         try {
+//             const location = getLocation(city)
+//             //document.location.href = 'index.html';
+
+//         }
+//     }
+// })    
+
+// sults_LngLconst reat = data.features[0].geometry.coordinates;
+const city = "CITY"
+const queryUrl = `https://api.mapbox.com/geocoding/v5/mapbox.places/${city}.json?proximity=ip&access_token=${apiKey}`
+
+function getLocation(city) {
+    fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${city}.json?proximity=ip&access_token=${apiKey}`)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data, "Arr", data.features[0].center);
+            // let geoJson = []
+            // for (let i = 0; i < data.feature.length; i++) {
+            //     geoJson.push({
+            //         "type": "Feature",
+            //         "geometry": {
+            //             "type": "Point",
+            //             "coordinates": [data.features[i].center[0], data.features[i].center[1]]
+            //         },
+            //         "properties": {
+            //             "name":data.features[i].place_name
+            //         }
+            //     })
+            // }
+           displayMap(data.features[0].center[0], data.features[0].center[1])
+           // displayMap(geoJson)
         });
-        
-        // daySearch.addEventListener("submit", async event => {
-        //     event.preventDefault();
-        //     const city = daySearch.value;
-        //     if(city){
-        //         try {
-        //             const location = getLocation(city)
-        //             //document.location.href = 'index.html';
-                    
-        //         }
-        //     }
-        // })    
-        
-        // sults_LngLconst reat = data.features[0].geometry.coordinates;
-    const city = "Sheffield"
-    const queryUrl = `https://api.mapbox.com/geocoding/v5/mapbox.places/${city}.json?proximity=ip&access_token=${apiKey}`
-    
-    function getLocation(city) {
-        fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${city}.json?proximity=ip&access_token=${apiKey}`)
+    // .then(data => {
+    // const {lat, lng} = 
+    // })
+}
+
+var btnFoodSearch = document.getElementById("btnFoodSearch");
+btnFoodSearch.addEventListener("click", function () {
+    var foodCity = document.getElementById("foodCity").value;
+    mapContainer.style.display = "block"
+    homepageContainer.style.display = "none"
+
+    console.log(foodCity)
+    getLocation(foodCity);
+});
+
+
+function getFoodDrink() {
+    const queryUrl = `https://api.mapbox.com/search/searchbox/v1/category/food_and_drink?proximity=ip&access_token=${apiKey}`
+    fetch(queryUrl)
         .then(response => response.json())
         .then(data => {
             console.log(data);
         });
-        // .then(data => {
-            // const {lat, lng} = 
-            // })
-        }
-        getLocation(city);
-        
+}
+getLocation(city);
+        //ACCESS TO SEARCH FOOD BTN WITH EVENT LISTENER
+
