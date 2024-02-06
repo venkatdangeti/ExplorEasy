@@ -1,0 +1,71 @@
+body { margin: 0; padding: 0; }
+
+.header {
+    padding-bottom: 200px;
+}
+
+.landing-page {
+    background-image: url('https://www.visit-hampshire.co.uk/dbimgs/VB-Winchester0676%20SR.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    background-color: rgba(0, 0, 0, 0.555);
+    margin: 0 30%;
+}
+
+.companyName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color: cornflowerblue;
+    
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    margin: 5px;
+    background-color: rgb(6, 185, 21) !important;
+    border-color: aliceblue !important;
+}
+
+.pageTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(178, 181, 202);
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.search  {
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.startSearch  {
+    margin: 10px 0 10px 0;
+    justify-content: center;
+    align-items: center;
+}
+
+#map {
+    height: 600px;
+    width: 100%;
+    position: relative ; 
+}
+
+.hide {
+    display: none;
+  }
