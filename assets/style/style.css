@@ -73,3 +73,8 @@ main {
   .modal-backdrop {
     --bs-backdrop-bg: transparent; 
 }
+
+#weather {
+    font-size: 50px;
+color: chartreuse;
+}

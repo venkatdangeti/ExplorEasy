@@ -1,7 +1,9 @@
 const mapContainer = document.getElementById("map-container");
 const homepageContainer = document.getElementById("homepage");
+const weather = document.getElementById("weather");
 // const foodSearch = document.getElementById("btnFoodSearch");
 mapContainer.style.display = "none"
+weather.style.display = "none"
 
 
 
@@ -123,6 +125,7 @@ var btnFoodSearch = document.getElementById("btnFoodSearch");
 btnFoodSearch.addEventListener("click", function () {
     var foodCity = document.getElementById("foodCity").value;
     mapContainer.style.display = "block"
+    weather.style.display="block"
     homepageContainer.style.display = "none"
 
     console.log(foodCity);
