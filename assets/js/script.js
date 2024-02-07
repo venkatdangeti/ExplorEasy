@@ -64,7 +64,7 @@ function displayMap( long,lat) {
     const map = new mapboxgl.Map({
         container: 'map', // container ID
         center: [ long, lat], // starting position [lng, lat]
-        zoom: 9 // starting zoom
+        zoom: 13 // starting zoom
 
     });
 
@@ -118,13 +118,14 @@ function getLocation(city) {
     // })
 }
 
+//FOOD
 var btnFoodSearch = document.getElementById("btnFoodSearch");
 btnFoodSearch.addEventListener("click", function () {
     var foodCity = document.getElementById("foodCity").value;
     mapContainer.style.display = "block"
     homepageContainer.style.display = "none"
 
-    console.log(foodCity)
+    console.log(foodCity);
     getLocation(foodCity);
 });
 
@@ -138,5 +139,51 @@ function getFoodDrink() {
         });
 }
 getLocation(city);
+
+
+//SHOPPING
+var btnShoppingSearch = document.getElementById("btnShoppingSearch");
+btnShoppingSearch.addEventListener("click", function () {
+    var shoppingCity = document.getElementById("shoppingCity").value;
+    mapContainer.style.display = "block"
+    homepageContainer.style.display = "none"
+
+    console.log(shoppingCity);
+    getLocation(shoppingCity);
+});
+
+function getShopping() {
+    const queryUrl = `https://api.mapbox.com/search/searchbox/v1/category/shopping?proximity=ip&access_token=${apiKey}`
+    fetch(queryUrl)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        });
+}
+getLocation(city);
+
+
+//NIGHT OUT
+var btnNightLifeSearch = document.getElementById("btnNightLifeSearch");
+btnNightLifeSearch.addEventListener("click", function () {
+    var nightLifeCity = document.getElementById("nightLifeCity").value;
+    mapContainer.style.display = "block"
+    homepageContainer.style.display = "none"
+
+    console.log(nightLifeCity);
+    getLocation(nightLifeCity);
+});
+
+
+function getNightLife() {
+    const queryUrl = `https://api.mapbox.com/search/searchbox/v1/category/night_life?proximity=ip&access_token=${apiKey}`
+    fetch(queryUrl)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        });
+}
+getLocation(city);
+
         //ACCESS TO SEARCH FOOD BTN WITH EVENT LISTENER
 

@@ -27,30 +27,27 @@
             <div class="px-3 companyName">ExplorEasy</div>
             <div class="pageTitle">What what you like to do?</div>
             <div class="buttons">
-                <!-- BUTTON TRIGGER MODAL -->
+                
+              <!-- BUTTON TRIGGER MODAL -->
                 <button type="button" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#foodModal" >Food</button>
-                <button type="button" class="btn btn-primary">Day Out</button>
-                <button type="button" class="btn btn-primary">Night Out</button>
-                <button type="button" class="btn btn-primary">Travel</button>
-                <button type="button" class="btn btn-primary">Tourism</button>
+                <button type="button" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#shoppingModal">Shopping</button>
+                <button type="button" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#nightLifeModal">Night Out</button>
             </div>
         <form id="search-form" class="daySearch">
-            <input type="text" class="search" placeholder="Where: e.g. Cornwall"><br>
-            <button type="submit" class="startSearch">Search for your dream day out</button>
         </form>
 
-        <!-- MODAL -->
+        <!-- MODAL 1 -->
   <div class="modal fade" id="foodModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Customize your Experience</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">CITY</label>
-                <input type="text" class="form-control" id="foodCity" aria-describedby="emailHelp">
+                <label class="form-label">CITY</label>
+                <input type="text" class="form-control" id="foodCity">
               </div>
             
               <!--CHECK FORM-->
@@ -74,6 +71,82 @@
       </div>
     </div>
   </div>
+
+        <!-- MODAL 2-->
+  <div class="modal fade" id="shoppingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Customize your Experience</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mb-3">
+                <label class="form-label">CITY</label>
+                <input type="text" class="form-control" id="shoppingCity">
+              </div>
+            
+              <!--CHECK FORM-->
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Clothes
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                <label class="form-check-label" for="flexCheckChecked">
+                 Shoes
+                </label>
+              </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="btnShoppingSearch">SEARCH</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <!-- MODAL 3 -->
+  <div class="modal fade" id="nightLifeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Customize your Experience</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mb-3">
+                <label class="form-label">CITY</label>
+                <input type="text" class="form-control" id="nightLifeCity">
+              </div>
+            
+              <!--CHECK FORM-->
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Drinks
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                <label class="form-check-label" for="flexCheckChecked">
+                  Live Music
+                </label>
+              </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="btnNightLifeSearch">SEARCH</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+
+   
 
     </main>
     <section id="map-container">
