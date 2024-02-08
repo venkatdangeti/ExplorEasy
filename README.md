@@ -23,6 +23,9 @@ To use this application:
 
 ![alt text](/Images/screenshot.png)
 
+
+![alt text](/Images/displayscreenshot.png)
+
 ## Credits
 
 
