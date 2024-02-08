@@ -13,7 +13,7 @@ There is no installation required for this application.
 
 ## Usage
 
-To use this application:
+To use this application click this link : https://venkatdangeti.github.io/ExplorEasy/
 
 -Select which activity you would like
 
