@@ -19,7 +19,7 @@ To use this application:
 
 -Enter the location you would like the activity to be in.
 
--A map will be displayed along with the weather for that city
+-A map will be displayed along with the weather for that city.
 
 ![alt text](/Images/screenshot.png)
 
