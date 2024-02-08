@@ -14,20 +14,32 @@ There is no installation required for this application.
 ## Usage
 
 To use this application:
+
 -Select which activity you would like
+
 -Enter the location you would like the activity to be in.
--A map will be displayed along with the weather for that city
-ADD SCREENSHOT HERE:
-![alt text](assets/images/screenshot.png)
+
+-A map will be displayed along with the weather for that city.
+
+![alt text](/Images/screenshot.png)
+
+
+![alt text](/Images/displayscreenshot.png)
 
 ## Credits
 
+
 David Brooks
+
 Fernanda
+
 Venkat D
+
 Teannie Binns
-API’s
+
+
 https://openweathermap.org/current#name
+
 https://docs.mapbox.com/api/overview/
 
 ## License
@@ -51,6 +63,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ---
+
 
 openweathermap.orgopenweathermap.org
 Current weather data - OpenWeatherMap
