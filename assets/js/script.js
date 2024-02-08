@@ -152,7 +152,7 @@ function showAll(data) {
         );
         listing.classList.add('active');
     });
-    addMarkers()
+    addMarkers(data)
 }
 
 function displayMap(long, lat) {
@@ -177,8 +177,10 @@ function displayMap(long, lat) {
 const city = "CITY"
 const queryUrl = `https://api.mapbox.com/geocoding/v5/mapbox.places/${city}.json?proximity=ip&access_token=${apiKey}`
 
-function getLocation(city) {
-    fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${city}.json?proximity=ip&access_token=${apiKey}`)
+function getLocation(city, category) {
+    console.log('city', city);
+    console.log('category', category);
+    fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${category},${city}.json?proximity=ip&types=poi&limit=100&language=en&access_token=${apiKey}`)
         .then(response => response.json())
         .then(data => {
             console.log("Data", data)
@@ -195,25 +197,10 @@ btnFoodSearch.addEventListener("click", function () {
     listingcontainer.style.display = "block";
     homepageContainer.style.display = "none"
     console.log(foodCity);
-    getLocation(foodCity);
-    
+    getLocation(foodCity, 'pizza, restaurant, ice cream parlor, ice cream, fast food');
+    // getFoodDrink(foodCity)
 });
 
-
-function getFoodDrink(city) {
-    // const queryUrl = `https://api.mapbox.com/search/searchbox/v1/category/food_and_drink?proximity=ip&access_token=${apiKey}`
-
-    const queryUrl = `https://api.mapbox.com/search/searchbox/v1/suggest?q=${city}&language=en&poi_category=food&types=address&&session_token=007fe9f8-df69-45f1-88d8-85f395d080bd&access_token=${apiKey}`
-
-    city.preventDefault();
-    fetch(queryUrl)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            showAll(data)
-        });
-}
-getLocation(city);
 
 
 //SHOPPING
@@ -225,19 +212,9 @@ btnShoppingSearch.addEventListener("click", function () {
     listingcontainer.style.display = "block";
     homepageContainer.style.display = "none"
     console.log(shoppingCity);
-    getLocation(shoppingCity);
+    getLocation(shoppingCity, 'clothing, accessories, apparel');
 });
 
-function getShopping() {
-    const queryUrl = `https://api.mapbox.com/search/searchbox/v1/category/shopping?proximity=ip&access_token=${apiKey}`
-    fetch(queryUrl)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            showAll(data)
-        });
-}
-getLocation(city);
 
 
 //NIGHT OUT
@@ -249,20 +226,10 @@ btnNightLifeSearch.addEventListener("click", function () {
     listingcontainer.style.display = "block";
     homepageContainer.style.display = "none"
     console.log(nightLifeCity);
-    getLocation(nightLifeCity);
+    getLocation(nightLifeCity, 'night club, disco');
 });
 
 
-function getNightLife() {
-    const queryUrl = `https://api.mapbox.com/search/searchbox/v1/category/night_life?proximity=ip&access_token=${apiKey}`
-    fetch(queryUrl)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            showAll(data)
-        });
-}
-getLocation(city);
 
 //ACCESS TO SEARCH FOOD BTN WITH EVENT LISTENER
 
