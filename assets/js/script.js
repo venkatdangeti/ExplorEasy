@@ -17,7 +17,7 @@ const apiKey = "pk.eyJ1IjoibWFmZXI3NCIsImEiOiJjbHMyODV2M3YwZ3NoMmxwaTZyZWJza3Q2I
 //creating list to display in the html
 function buildLocationList(stores) {
     const listings = document.getElementById('listings');
-    // listings.innerHTML = "";
+    listings.innerHTML = "";
     for (const store of stores.features) {
         /* Add a new listing section to the sidebar. */
 
@@ -196,11 +196,16 @@ btnFoodSearch.addEventListener("click", function () {
     homepageContainer.style.display = "none"
     console.log(foodCity);
     getLocation(foodCity);
+    
 });
 
 
-function getFoodDrink() {
-    const queryUrl = `https://api.mapbox.com/search/searchbox/v1/category/food_and_drink?proximity=ip&access_token=${apiKey}`
+function getFoodDrink(city) {
+    // const queryUrl = `https://api.mapbox.com/search/searchbox/v1/category/food_and_drink?proximity=ip&access_token=${apiKey}`
+
+    const queryUrl = `https://api.mapbox.com/search/searchbox/v1/suggest?q=${city}&language=en&poi_category=food&types=address&&session_token=007fe9f8-df69-45f1-88d8-85f395d080bd&access_token=${apiKey}`
+
+    city.preventDefault();
     fetch(queryUrl)
         .then(response => response.json())
         .then(data => {
